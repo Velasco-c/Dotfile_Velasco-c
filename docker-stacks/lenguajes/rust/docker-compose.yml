@@ -1,0 +1,10 @@
+name: lenguajes-rust
+services:
+  app:
+    image: rust:1-slim
+    command: cargo run
+    ports:
+    - "127.0.0.1:8084:8084"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

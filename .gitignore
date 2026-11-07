@@ -1,0 +1,30 @@
+# Secretos
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+
+# Generados o locales (los regenera la app)
+**/noctalia.lua
+**/themes/noctalia.conf
+**/icon-theme.cache
+**/fish_variables
+**/fish/.config/fish/completions/
+**/fish/.config/fish/functions/
+**/fish/.config/fish/conf.d/
+
+# Historial, cachés y datos personales de Noctalia
+**/.noctalia-cache.json
+**/.local/state/noctalia/clipboard/
+**/.local/state/noctalia/notification_history*
+**/.local/state/noctalia/recently_used.json
+**/.local/state/noctalia/usage_counts.json
+**/.local/state/noctalia/state.toml
+**/.local/state/noctalia/plugins/
+
+# Respaldos y archivos temporales
+*.log
+*.bak
+*.backup-*
+*.tar.gz

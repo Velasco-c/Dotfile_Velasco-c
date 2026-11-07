@@ -1,0 +1,10 @@
+name: lenguajes-java-spring
+services:
+  app:
+    image: eclipse-temurin:25-jdk
+    command: ./mvnw spring-boot:run
+    ports:
+    - "127.0.0.1:8081:8081"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

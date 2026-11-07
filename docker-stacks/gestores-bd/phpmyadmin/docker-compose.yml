@@ -1,0 +1,9 @@
+name: gestores-bd-phpmyadmin
+services:
+  phpmyadmin:
+    image: phpmyadmin:5.2.3
+    ports:
+    - "127.0.0.1:8086:8086"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

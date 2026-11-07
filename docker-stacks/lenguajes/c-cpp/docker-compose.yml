@@ -1,0 +1,8 @@
+name: lenguajes-c-cpp
+services:
+  app:
+    image: gcc:16.2
+    command: sh -c "gcc src/main.c -o build/app && ./build/app"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

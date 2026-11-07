@@ -1,0 +1,5 @@
+# Entorno WEB: frontend y JavaScript/TypeScript.
+# Node.js NO va aquí: se administra con nvm (ver docs/COMANDOS.md, sección Node.js).
+pnpm
+bun
+deno

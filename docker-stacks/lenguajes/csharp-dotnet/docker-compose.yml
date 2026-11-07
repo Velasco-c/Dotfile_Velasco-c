@@ -1,0 +1,11 @@
+name: lenguajes-csharp-dotnet
+services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    working_dir: /workspace
+    command: dotnet watch --project app run --urls http://0.0.0.0:8080
+    ports:
+    - "127.0.0.1:8092:8080"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

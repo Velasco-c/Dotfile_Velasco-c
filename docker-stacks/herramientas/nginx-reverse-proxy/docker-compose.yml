@@ -1,0 +1,9 @@
+name: herramientas-nginx-reverse-proxy
+services:
+  nginx:
+    image: nginx:1.30-alpine
+    ports:
+    - "127.0.0.1:8084:80"
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped

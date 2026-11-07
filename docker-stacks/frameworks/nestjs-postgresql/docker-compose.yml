@@ -1,0 +1,37 @@
+name: frameworks-nestjs-postgresql
+services:
+  app:
+    image: node:26-alpine
+    working_dir: /workspace
+    command: sh -c "npm install && npm run start:dev"
+    ports:
+    - "127.0.0.1:3331:3331"
+    environment:
+      POSTGRES_DB: app_nest
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+    volumes:
+    - ./:/workspace
+    depends_on:
+    - postgres
+    restart: unless-stopped
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: app_nest
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+    ports:
+    - "127.0.0.1:5451:5432"
+    volumes:
+    - db-data:/var/lib/postgresql
+    restart: unless-stopped
+  adminer:
+    image: adminer:6.0.1
+    depends_on:
+    - postgres
+    ports:
+    - "127.0.0.1:8092:8080"
+    restart: unless-stopped
+volumes:
+  db-data: {}

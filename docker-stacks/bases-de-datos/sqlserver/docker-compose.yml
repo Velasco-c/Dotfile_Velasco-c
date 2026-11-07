@@ -1,0 +1,15 @@
+name: bases-de-datos-sqlserver
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Copia .env.example a .env y define MSSQL_SA_PASSWORD}
+      MSSQL_PID: Developer
+    ports:
+    - "127.0.0.1:1434:1433"
+    volumes:
+    - sqlserver-data:/var/opt/mssql
+    restart: unless-stopped
+volumes:
+  sqlserver-data: {}

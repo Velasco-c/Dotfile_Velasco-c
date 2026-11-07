@@ -1,0 +1,15 @@
+name: herramientas-traefik
+services:
+  traefik:
+    image: traefik:v3.7
+    command:
+    - --api.dashboard=true
+    - --api.insecure=true
+    - --providers.docker=true
+    - --entrypoints.web.address=:80
+    ports:
+    - "127.0.0.1:8083:80"
+    - "127.0.0.1:8082:8080"
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped

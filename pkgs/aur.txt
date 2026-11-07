@@ -1,0 +1,5 @@
+# Paquetes que NO están en los repositorios oficiales/cachyos (solo AUR).
+# El instalador los instala con paru, uno por uno, solo si tú confirmas.
+# paru muestra el PKGBUILD antes de compilar: revísalo.
+visual-studio-code-bin
+postman-bin

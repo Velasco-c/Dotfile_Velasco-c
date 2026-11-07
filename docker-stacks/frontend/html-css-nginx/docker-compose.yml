@@ -1,0 +1,9 @@
+name: frontend-html-css-nginx
+services:
+  web:
+    image: nginx:1.30-alpine
+    ports:
+    - "127.0.0.1:8090:80"
+    volumes:
+    - ./src:/usr/share/nginx/html:ro
+    restart: unless-stopped

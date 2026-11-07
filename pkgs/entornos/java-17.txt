@@ -1,0 +1,4 @@
+# Entorno JAVA 17 (opcional). Por defecto el repositorio instala la última JDK (jdk-openjdk).
+# Instala esto solo si un proyecto necesita Java 17. Ambas versiones pueden convivir;
+# cambia la activa con: sudo archlinux-java set <entorno>
+jdk17-openjdk

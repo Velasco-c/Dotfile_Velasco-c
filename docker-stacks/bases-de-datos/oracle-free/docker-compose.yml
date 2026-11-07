@@ -1,0 +1,15 @@
+name: bases-de-datos-oracle-free
+services:
+  oracle-free:
+    image: gvenzl/oracle-free:23-slim
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:?Copia .env.example a .env y define ORACLE_PASSWORD}
+      APP_USER: app_user
+      APP_USER_PASSWORD: ${ORACLE_USER_PASSWORD:?Copia .env.example a .env y define ORACLE_USER_PASSWORD}
+    ports:
+    - "127.0.0.1:1522:1521"
+    volumes:
+    - oracle-data:/opt/oracle/oradata
+    restart: unless-stopped
+volumes:
+  oracle-data: {}

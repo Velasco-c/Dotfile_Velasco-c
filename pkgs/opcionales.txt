@@ -1,0 +1,4 @@
+# Se preguntan por separado en el instalador.
+obsidian
+rust
+jdk-openjdk

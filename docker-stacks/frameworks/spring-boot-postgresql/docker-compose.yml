@@ -1,0 +1,40 @@
+name: frameworks-spring-boot-postgresql
+services:
+  app:
+    image: maven:3.9-eclipse-temurin-25
+    working_dir: /workspace
+    command: mvn spring-boot:run
+    ports:
+    - "127.0.0.1:8095:8095"
+    environment:
+      SERVER_PORT: 8095
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app_spring
+      SPRING_DATASOURCE_USERNAME: app_user
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+    volumes:
+    - ./:/workspace
+    - maven-cache:/root/.m2
+    depends_on:
+    - postgres
+    restart: unless-stopped
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: app_spring
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+    ports:
+    - "127.0.0.1:5454:5432"
+    volumes:
+    - db-data:/var/lib/postgresql
+    restart: unless-stopped
+  adminer:
+    image: adminer:6.0.1
+    depends_on:
+    - postgres
+    ports:
+    - "127.0.0.1:8096:8080"
+    restart: unless-stopped
+volumes:
+  db-data: {}
+  maven-cache: {}

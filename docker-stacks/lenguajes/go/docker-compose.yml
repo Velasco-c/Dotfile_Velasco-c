@@ -1,0 +1,10 @@
+name: lenguajes-go
+services:
+  app:
+    image: golang:1.26-alpine
+    command: go run ./cmd/app
+    ports:
+    - "127.0.0.1:8083:8083"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

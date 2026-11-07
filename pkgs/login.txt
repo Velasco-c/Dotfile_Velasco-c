@@ -1,0 +1,8 @@
+# Inicio de sesión con el tema SDDM corners (upstream aczw/sddm-theme-corners).
+# El greeter instalado es Qt5: necesita sus librerías base y los módulos QML que usa el tema.
+sddm
+qt5-base
+qt5-declarative
+qt5-svg
+qt5-graphicaleffects
+qt5-quickcontrols2

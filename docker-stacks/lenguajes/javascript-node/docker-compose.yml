@@ -1,0 +1,10 @@
+name: lenguajes-javascript-node
+services:
+  app:
+    image: node:26-alpine
+    command: npm install && npm run dev
+    ports:
+    - "127.0.0.1:3000:3000"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

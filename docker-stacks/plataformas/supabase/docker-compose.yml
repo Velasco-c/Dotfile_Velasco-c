@@ -1,0 +1,44 @@
+name: plataformas-supabase
+services:
+  db:
+    image: supabase/postgres:15.1.1.78
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+      POSTGRES_DB: postgres
+    ports:
+    - "127.0.0.1:54322:5432"
+    volumes:
+    - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+  studio:
+    image: supabase/studio:latest
+    depends_on:
+    - db
+    ports:
+    - "127.0.0.1:54323:3000"
+    environment:
+      SUPABASE_URL: http://kong:8000
+      SUPABASE_PUBLIC_URL: http://localhost:54321
+      SUPABASE_ANON_KEY: app_anon_key_local
+      SUPABASE_SERVICE_KEY: app_service_role_key_local
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copia .env.example a .env y define POSTGRES_PASSWORD}
+    restart: unless-stopped
+  kong:
+    image: kong:2.8.1
+    ports:
+    - "127.0.0.1:54321:8000"
+    environment:
+      KONG_DATABASE: 'off'
+      KONG_DECLARATIVE_CONFIG: /home/kong/kong.yml
+      KONG_DNS_ORDER: LAST,A,CNAME
+      KONG_PLUGINS: request-transformer,cors,key-auth,acl
+    volumes:
+    - ./config/kong/kong.yml:/home/kong/kong.yml:ro
+    restart: unless-stopped
+  mailpit:
+    image: axllent/mailpit:v1.30.5
+    ports:
+    - "127.0.0.1:8027:8025"
+    restart: unless-stopped
+volumes:
+  db-data: {}

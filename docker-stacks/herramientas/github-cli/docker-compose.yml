@@ -1,0 +1,22 @@
+name: herramientas-github-cli
+services:
+  github:
+    image: ghcr.io/cli/cli:v2.92.0
+    working_dir: /workspace
+    entrypoint:
+    - /bin/sh
+    command:
+    - -lc
+    - 'gh --version
+
+      git --version
+
+      tail -f /dev/null
+
+      '
+    environment:
+      GH_TOKEN: ''
+    volumes:
+    - ./:/workspace
+    - ../../:/docker-stacks
+    restart: unless-stopped

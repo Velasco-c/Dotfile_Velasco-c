@@ -1,0 +1,9 @@
+name: gestores-bd-redis-commander
+services:
+  redis-commander:
+    image: rediscommander/redis-commander:0.9.0
+    ports:
+    - "127.0.0.1:8089:8089"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

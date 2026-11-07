@@ -1,0 +1,15 @@
+name: bases-de-datos-mongodb
+services:
+  mongo:
+    image: mongo:8.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: app_user
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?Copia .env.example a .env y define MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: app_db
+    ports:
+    - "127.0.0.1:27018:27017"
+    volumes:
+    - mongo-data:/data/db
+    restart: unless-stopped
+volumes:
+  mongo-data: {}

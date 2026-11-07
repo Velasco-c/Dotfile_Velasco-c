@@ -1,0 +1,9 @@
+name: lenguajes-php-apache
+services:
+  app:
+    image: php:8.5-apache
+    ports:
+    - "127.0.0.1:8080:8080"
+    volumes:
+    - ./src:/var/www/html
+    restart: unless-stopped

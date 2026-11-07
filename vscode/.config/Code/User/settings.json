@@ -1,0 +1,73 @@
+{
+"liveServer.settings.donotShowInfoMsg": true,
+
+"security.workspace.trust.untrustedFiles": "open",
+
+"git.confirmSync": false,
+"git.autofetch": true,
+"git.enableSmartCommit": true,
+
+"gitlens.codeLens.enabled": false,
+"gitlens.currentLine.enabled": false,
+"gitlens.hovers.currentLine.overview": false,
+"gitlens.ai.model": "vscode",
+"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+"explorer.confirmDragAndDrop": false,
+"explorer.confirmDelete": false,
+"explorer.confirmPasteNative": false,
+
+"workbench.colorTheme": "NoctaliaTheme",
+"workbench.preferredDarkColorTheme": "NoctaliaTheme",
+"workbench.iconTheme": "material-icon-theme",
+
+"editor.fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
+"editor.fontSize": 15,
+"editor.lineHeight": 26,
+"editor.fontLigatures": true,
+
+"editor.cursorStyle": "line",
+"editor.cursorBlinking": "phase",
+"editor.cursorSmoothCaretAnimation": "off",
+"editor.cursorSurroundingLines": 4,
+
+"editor.smoothScrolling": false,
+"workbench.list.smoothScrolling": false,
+
+"editor.minimap.enabled": false,
+"editor.renderWhitespace": "selection",
+"editor.renderControlCharacters": false,
+
+"editor.matchBrackets": "always",
+"editor.mouseWheelZoom": true,
+
+"editor.bracketPairColorization.enabled": true,
+"editor.guides.bracketPairs": "active",
+
+"terminal.integrated.defaultProfile.linux": "bash",
+"terminal.integrated.fontFamily": "monospace",
+"terminal.integrated.fontSize": 14,
+"terminal.integrated.fontWeight": "normal",
+"terminal.integrated.fontWeightBold": "bold",
+"terminal.integrated.cursorStyle": "line",
+"terminal.integrated.cursorBlinking": true,
+"terminal.integrated.lineHeight": 1.15,
+"terminal.integrated.letterSpacing": 0.2,
+"terminal.integrated.gpuAcceleration": "on",
+"terminal.integrated.tabs.enabled": true,
+"terminal.integrated.stickyScroll.enabled": true,
+"terminal.integrated.enableImages": true,
+
+"github.copilot.enable": {
+"*": false,
+"plaintext": false,
+"markdown": false,
+"scminput": false,
+"json": false
+},
+"window.customTitleBarVisibility": "windowed",
+"terminal.integrated.initialHint": false,
+"window.menuBarVisibility": "visible",
+"window.titleBarStyle": "native",
+"files.autoSave": "afterDelay"
+}

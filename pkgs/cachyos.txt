@@ -1,0 +1,2 @@
+# Solo en CachyOS. Instala Hyprland, Noctalia y sus dependencias.
+cachyos-hypr-noctalia

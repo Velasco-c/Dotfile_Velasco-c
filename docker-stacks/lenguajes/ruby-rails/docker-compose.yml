@@ -1,0 +1,10 @@
+name: lenguajes-ruby-rails
+services:
+  app:
+    image: ruby:4.0.5
+    command: sh -c "bundle install || true; rails server -b 0.0.0.0 -p 3002"
+    ports:
+    - "127.0.0.1:3002:3002"
+    volumes:
+    - ./:/workspace
+    restart: unless-stopped

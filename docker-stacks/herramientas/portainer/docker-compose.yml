@@ -1,0 +1,10 @@
+name: herramientas-portainer
+services:
+  portainer-ce:
+    image: portainer/portainer-ce:2.45.2
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - portainer-data:/data
+    restart: unless-stopped
+volumes:
+  portainer-data: {}

@@ -1,0 +1,32 @@
+# Paquetes de repositorios oficiales (funcionan en CachyOS y en Arch).
+# El instalador omite los que ya tienes. Quita las líneas que no uses.
+# Las líneas que empiezan con # se ignoran.
+#
+# No están aquí a propósito: Steam, Docker, Firefox Developer, Brave, VS Code y Postman.
+# El instalador (paso 2) te pregunta por cada uno antes de instalarlo.
+
+# Escritorio y Hyprland
+brightnessctl
+playerctl
+wireplumber
+dolphin
+kitty
+alacritty
+
+# Las fuentes no van aquí: el instalador las pregunta en su sección 4 (lib/fuentes.py).
+
+# Terminal
+fish
+starship
+fastfetch
+ncdu
+micro
+ripgrep
+tree
+trash-cli
+git
+file
+
+# Música en terminal (ytm-player usa mpv para reproducir)
+mpv
+python-pipx

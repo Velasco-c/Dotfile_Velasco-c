@@ -1,0 +1,16 @@
+name: bases-de-datos-mysql
+services:
+  mysql:
+    image: mysql:9.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Copia .env.example a .env y define MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Copia .env.example a .env y define MYSQL_PASSWORD}
+    ports:
+    - "127.0.0.1:3307:3306"
+    volumes:
+    - mysql-data:/var/lib/mysql
+    restart: unless-stopped
+volumes:
+  mysql-data: {}
